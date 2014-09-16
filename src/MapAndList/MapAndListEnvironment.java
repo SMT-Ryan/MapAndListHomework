@@ -1,5 +1,11 @@
 package MapAndList;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 
 /******************************************************************************
  * <b>Title</B>: MapAndListEnvironment.java Description: this project will 
@@ -24,14 +30,156 @@ public class MapAndListEnvironment {
 
 	public static void main(String[] args) {
 		
-		MapAndListEnvironment me = new MapAndListEnvironment();
-		me.process();
+		MapAndListEnvironment mapEnvironment = new MapAndListEnvironment();
+		mapEnvironment.process();
 		
 		
 	}
 	
 	public void process() {
-		// TODO Auto-generated method stub
+		
+		//make a map of state keys and names
+		
+		//step one make a key list
+		List<String> stateKey = new ArrayList<>(50);
+		stateKey.add("AK");
+		stateKey.add("AL");		
+		stateKey.add("AR");
+		stateKey.add("AZ");
+		stateKey.add("CA");
+		stateKey.add("CO");
+		stateKey.add("CT");
+		stateKey.add("DE");
+		stateKey.add("FL");
+		stateKey.add("GA");
+		stateKey.add("HI");
+		stateKey.add("IA");
+		stateKey.add("ID");
+		stateKey.add("IL");
+		stateKey.add("IN");
+		stateKey.add("KS");
+		stateKey.add("KY");
+		stateKey.add("LA");
+		stateKey.add("MA");
+		stateKey.add("MD");
+		stateKey.add("ME");
+		stateKey.add("MI");
+		stateKey.add("MN");
+		stateKey.add("MO");
+		stateKey.add("MS");
+		stateKey.add("MT");
+		stateKey.add("NC");
+		stateKey.add("ND");
+		stateKey.add("NE");
+		stateKey.add("NH");
+		stateKey.add("NJ");
+		stateKey.add("NM");
+		stateKey.add("NV");
+		stateKey.add("NY");
+		stateKey.add("OH");
+		stateKey.add("OK");
+		stateKey.add("OR");
+		stateKey.add("PA");
+		stateKey.add("RI");
+		stateKey.add("SC");
+		stateKey.add("SD");
+		stateKey.add("TN");
+		stateKey.add("TX");
+		stateKey.add("UT");
+		stateKey.add("VA");
+		stateKey.add("VT");
+		stateKey.add("WA");
+		stateKey.add("WI");
+		stateKey.add("WV");
+		stateKey.add("WY");
+		
+		System.out.println(stateKey.size());
+		
+		
+		//step two make a state name list 
+		List<String> stateName = new ArrayList<>(50);
+		
+		stateName.add("Alaska");
+		stateName.add("Alabama");		
+		stateName.add("Arkansas");
+		stateName.add("Arizona");
+		stateName.add("California");
+		stateName.add("Colorado");
+		stateName.add("Connecticut");
+		stateName.add("Delaware");
+		stateName.add("Florida");
+		stateName.add("Georgia");
+		stateName.add("Hawaii");
+		stateName.add("Iowa");
+		stateName.add("Idaho");
+		stateName.add("Illinois");
+		stateName.add("Indiana");
+		stateName.add("Kansas");
+		stateName.add("Kentucky");
+		stateName.add("Louisiana");
+		stateName.add("Massachusetts");
+		stateName.add("Maryland");
+		stateName.add("Maine");
+		stateName.add("Michigan");
+		stateName.add("Minnesota");
+		stateName.add("Missouri");
+		stateName.add("Mississippi");
+		stateName.add("Montana");
+		stateName.add("North Carolina");
+		stateName.add("North Dakota");
+		stateName.add("Nebraska");
+		stateName.add("New Hampshire");
+		stateName.add("New Jersey");
+		stateName.add("New Mexico");
+		stateName.add("Nevada");
+		stateName.add("New York");
+		stateName.add("Ohio");
+		stateName.add("Oklahoma");
+		stateName.add("Oregon");
+		stateName.add("Pennsylvania");
+		stateName.add("Rhode Island");
+		stateName.add("South Carolina");
+		stateName.add("South Dakota");
+		stateName.add("Tennessee");
+		stateName.add("Texas");
+		stateName.add("Utah");
+		stateName.add("Virginia");
+		stateName.add("Vermont");
+		stateName.add("Washington");
+		stateName.add("Wisconsin");
+		stateName.add("West Verginia");
+		stateName.add("Wyoming");
+		
+		System.out.println(stateName.size());
+		
+		
+		 Map<String , String> stateMap = new TreeMap<>();
+		 
+		 for ( int count = 0 ; count < stateKey.size(); count++ ) {
+
+			stateMap.put(stateKey.get(count), stateName.get(count));
+			    
+			}
+				    
+				
+		 System.out.println(stateMap.size());
+		 
+		 System.out.println("Is ohio there ? " + stateName.contains( "Ohio" )); 
+		 
+		 System.out.println("Is ohio's key there ? " + stateKey.contains("OH"));
+		 
+		 System.out.println(stateMap.keySet());
+		 
+		 System.out.println(stateMap.values());
+		 
+		 
+		
+		//make a method for ordering the states
+		
+		//make the method allow for reverse ordering(if that doesn't work could
+		//always make a new method)
+		
+		
 
 	}
 
