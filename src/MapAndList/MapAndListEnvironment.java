@@ -1,8 +1,8 @@
 package MapAndList;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -39,9 +39,10 @@ public class MapAndListEnvironment {
 	
 	public void process() {
 		
-		//make a map of state keys and names
+		//make a map of state keys and names, present data in display in order
+		//	and in reverse.
 		
-		//step one make a key list
+		//step one make a key list.  might make a good list object.
 		List<String> stateKey = new ArrayList<>(50);
 
 		stateKey.add("WY");
@@ -71,7 +72,7 @@ public class MapAndListEnvironment {
 		stateKey.add("MO");
 		stateKey.add("MS");
 		stateKey.add("MT");
-		stateKey.add("NC");
+		stateKey.add("NC");	
 		stateKey.add("ND");
 		stateKey.add("NE");
 		stateKey.add("NH");
@@ -97,7 +98,8 @@ public class MapAndListEnvironment {
 
 		
 		
-		//step two make a state name list 
+		//step two make a state name list. might make a good second list 
+		//	object.
 		List<String> stateName = new ArrayList<>(50);
 		
 		stateName.add("Wyoming");
@@ -152,13 +154,13 @@ public class MapAndListEnvironment {
 		stateName.add("West Verginia");
 
 				
-		
+		//generates the first treemap in normal natural order.  would it make 
+		//	sense to produce a map object
 		 Map<String , String> stateMap = new TreeMap<>();
 		 
-		 for ( int count = 0 ; count < stateKey.size(); count++ ) {
+		 	for ( int count = 0 ; count < stateKey.size(); count++ ) {
 
-			stateMap.put(stateKey.get(count), stateName.get(count));
-			    
+		 		stateMap.put(stateKey.get(count), stateName.get(count));
 			}
 				    
 				
@@ -171,17 +173,21 @@ public class MapAndListEnvironment {
 		 
 		 System.out.println(stateMap.values());
 		 
-		
-		//make a new sorted map with a unique comparer.
-		
-		 Map<String , String> stateMapInverted = new HashMap<>();
+		 
+
+		//make a new sorted map with a unique Comparator
+		 
+		//set a custom comparator to sort in reverse. 
+		Comparator<String> test = Collections.reverseOrder();
+		 
+		 //produce a second map using the new comparator.  poss. part of the same map class.
+		 Map<String , String> stateMapInverted = new TreeMap<String , String >(test);
 		 
 		 for ( int count = 0 ; count < stateKey.size(); count++ ) {
 
 			stateMapInverted.put(stateKey.get(count), stateName.get(count));
 			    
 			}
-		
 		 
 		 System.out.println(stateMapInverted.size());
 		 
@@ -191,7 +197,8 @@ public class MapAndListEnvironment {
 		 System.out.println(stateMapInverted.keySet());
 		 
 		 System.out.println(stateMapInverted.values());
-
+		 
 	}
+
 
 }
