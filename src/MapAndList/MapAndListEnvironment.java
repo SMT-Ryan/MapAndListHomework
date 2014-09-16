@@ -1,6 +1,7 @@
 package MapAndList;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -42,8 +43,10 @@ public class MapAndListEnvironment {
 		
 		//step one make a key list
 		List<String> stateKey = new ArrayList<>(50);
-		stateKey.add("AK");
+
+		stateKey.add("WY");
 		stateKey.add("AL");		
+		stateKey.add("AK");
 		stateKey.add("AR");
 		stateKey.add("AZ");
 		stateKey.add("CA");
@@ -91,16 +94,15 @@ public class MapAndListEnvironment {
 		stateKey.add("WA");
 		stateKey.add("WI");
 		stateKey.add("WV");
-		stateKey.add("WY");
-		
-		System.out.println(stateKey.size());
+
 		
 		
 		//step two make a state name list 
 		List<String> stateName = new ArrayList<>(50);
 		
+		stateName.add("Wyoming");
+		stateName.add("Alabama");
 		stateName.add("Alaska");
-		stateName.add("Alabama");		
 		stateName.add("Arkansas");
 		stateName.add("Arizona");
 		stateName.add("California");
@@ -148,10 +150,8 @@ public class MapAndListEnvironment {
 		stateName.add("Washington");
 		stateName.add("Wisconsin");
 		stateName.add("West Verginia");
-		stateName.add("Wyoming");
-		
-		System.out.println(stateName.size());
-		
+
+				
 		
 		 Map<String , String> stateMap = new TreeMap<>();
 		 
@@ -164,22 +164,33 @@ public class MapAndListEnvironment {
 				
 		 System.out.println(stateMap.size());
 		 
-		 System.out.println("Is ohio there ? " + stateName.contains( "Ohio" )); 
-		 
-		 System.out.println("Is ohio's key there ? " + stateKey.contains("OH"));
-		 
+		 System.out.println("printing out a alphabetical tree map of states "
+		 		+ "and states codes" ); 
+
 		 System.out.println(stateMap.keySet());
 		 
 		 System.out.println(stateMap.values());
 		 
+		
+		//make a new sorted map with a unique comparer.
+		
+		 Map<String , String> stateMapInverted = new HashMap<>();
 		 
+		 for ( int count = 0 ; count < stateKey.size(); count++ ) {
+
+			stateMapInverted.put(stateKey.get(count), stateName.get(count));
+			    
+			}
 		
-		//make a method for ordering the states
-		
-		//make the method allow for reverse ordering(if that doesn't work could
-		//always make a new method)
-		
-		
+		 
+		 System.out.println(stateMapInverted.size());
+		 
+		 System.out.println("printing out a alphabetical tree map of states "
+		 		+ "and states codes" ); 
+
+		 System.out.println(stateMapInverted.keySet());
+		 
+		 System.out.println(stateMapInverted.values());
 
 	}
 
