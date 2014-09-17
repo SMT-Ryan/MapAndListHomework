@@ -18,7 +18,7 @@ import java.util.TreeMap;
  * 
  * Copyright: Copyright (c) 2014 Company: Silicon Mountain Technologies
  *
- * @author: Ryan Riker
+ * @author Ryan Riker
  * @version 1.0
  * @since 09/10/2014 last update: never
  *****************************************************************************/
@@ -36,13 +36,15 @@ public class MapAndListEnvironment {
 		
 		
 	}
+	/**
+	 * Produces a list of states abbreviations and state names, which are
+	 * 		organized into a two treemaps.  one in natural order and one in 
+	 * 		reverse natural order. 
+	 */
 	
 	public void process() {
 		
-		//make a map of state keys and names, present data in display in order
-		//	and in reverse.
-		
-		//step one make a key list.  might make a good list object.
+		//makes a key list.
 		List<String> stateKey = new ArrayList<>(50);
 
 		stateKey.add("WY");
@@ -98,8 +100,7 @@ public class MapAndListEnvironment {
 
 		
 		
-		//step two make a state name list. might make a good second list 
-		//	object.
+		//makes a state name list.  
 		List<String> stateName = new ArrayList<>(50);
 		
 		stateName.add("Wyoming");
@@ -154,8 +155,7 @@ public class MapAndListEnvironment {
 		stateName.add("West Verginia");
 
 				
-		//generates the first treemap in normal natural order.  would it make 
-		//	sense to produce a map object
+		//generates the first treemap in normal natural order.  
 		 Map<String , String> stateMap = new TreeMap<>();
 		 
 		 	for ( int count = 0 ; count < stateKey.size(); count++ ) {
@@ -163,9 +163,7 @@ public class MapAndListEnvironment {
 		 		stateMap.put(stateKey.get(count), stateName.get(count));
 			}
 				    
-				
-		 System.out.println(stateMap.size());
-		 
+		 //prints the first maps keys and values to the display.
 		 System.out.println("printing out a alphabetical tree map of states "
 		 		+ "and states codes" ); 
 
@@ -173,15 +171,11 @@ public class MapAndListEnvironment {
 		 
 		 System.out.println(stateMap.values());
 		 
-		 
-
-		//make a new sorted map with a unique Comparator
-		 
 		//set a custom comparator to sort in reverse. 
-		Comparator<String> test = Collections.reverseOrder();
+		Comparator<String> testComparator = Collections.reverseOrder();
 		 
-		 //produce a second map using the new comparator.  poss. part of the same map class.
-		 Map<String , String> stateMapInverted = new TreeMap<String , String >(test);
+		 //produce a second map of the same listss using the new comparator.
+		 Map<String , String> stateMapInverted = new TreeMap<String , String >(testComparator);
 		 
 		 for ( int count = 0 ; count < stateKey.size(); count++ ) {
 
@@ -189,6 +183,7 @@ public class MapAndListEnvironment {
 			    
 			}
 		 
+		 //prints the second maps keys and values to the display.
 		 System.out.println(stateMapInverted.size());
 		 
 		 System.out.println("printing out a alphabetical tree map of states "
