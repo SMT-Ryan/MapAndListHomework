@@ -1,6 +1,6 @@
 package MapAndList;
 
-/**
+/******************************************************************************
  * <b>Title</B>: card.java 
  * Description: class Object that is a card.  
  * Copyright: Copyright (c) 2014 
@@ -9,17 +9,20 @@ package MapAndList;
  * @version 1.0
  * @since 09/11/2014
  * last update: never
- */
+ *****************************************************************************/
 
 public class Card {
 		
 	
-	/**********************************************************************
-	*possible ranks 0(no card) 1(low ace) 2 3 4 5 6 7 8 9 10 11(jack and/or
-	*	high ace) 12(queen) 13(king) 15(joker)		
-	*	possible suits E(no card) H(hearts) D(diamonds) S(spades) C(clubs) 
-	*	j(joker) jokers and no cards.
-	*******************************************************************************/	
+	/*************************************************************************
+	*The Possible ranks:
+	* 0(no card) 1(low ace) 2 3 4 5 6 7 8 9 10 11(jack and/or high ace) 
+	* 	12(queen) 13(king) 15(joker)		
+	*	
+	*The possible suits: 
+	*E(no card) H(hearts) D(diamonds) S(spades) C(clubs) j(joker) jokers 
+	*	and no cards.
+	**************************************************************************/	
 
 	
 	/**
@@ -59,7 +62,8 @@ public class Card {
 		private char cardSuit;
 		
 			/**
-			 * if nothing is passed to the card class it will make a card but set the values at no card and empty.  
+			 * If nothing is passed to the card class it will make a card but 
+			 * set the values at no card and empty.  
 			 */
 			public Card (){
 				cardRank = NO_CARD;
@@ -133,7 +137,8 @@ public class Card {
 		    }
 			
 		    public boolean isPlayableSuit(char cardSuit) {
-		        return DIAMONDS == cardSuit || CLUBS == cardSuit || SPADES == cardSuit || HEARTS == cardSuit;
+		        return DIAMONDS == cardSuit || CLUBS == cardSuit || 
+		        		SPADES == cardSuit || HEARTS == cardSuit;
 		    }
 
 		    
@@ -147,7 +152,9 @@ public class Card {
 		    }
 			
 		    public boolean isPossibleSuit(char cardSuit) {
-		        return JOKER == cardSuit || EMPTY == cardSuit || DIAMONDS == cardSuit || CLUBS == cardSuit || SPADES == cardSuit || HEARTS == cardSuit;
+		        return JOKER == cardSuit || EMPTY == cardSuit || 
+		        		DIAMONDS == cardSuit || CLUBS == cardSuit ||
+		        		SPADES == cardSuit || HEARTS == cardSuit;
 		    }
 
 

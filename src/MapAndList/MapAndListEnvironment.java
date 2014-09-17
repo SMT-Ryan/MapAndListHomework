@@ -9,12 +9,13 @@ import java.util.TreeMap;
 
 
 /******************************************************************************
- * <b>Title</B>: MapAndListEnvironment.java Description: this project will 
- * include: a map with state names and state keys and a method to order and 
- * reverse the order.  
+ * <b>Title</B>: MapAndListEnvironment.java Description: This project will 
+ * include: 
+ * a map with state names and state keys and a methods to display them
+ * in natural order and reverse the order.  
  * 
- * a list containing a deck of cards. and a method to shuffle them into random 
- * order.
+ * a list containing a deck of cards with methods to display them as entered 
+ * and to display them after they have been shuffled into random order.
  * 
  * Copyright: Copyright (c) 2014 Company: Silicon Mountain Technologies
  *
@@ -30,10 +31,11 @@ public class MapAndListEnvironment {
 	}
 
 	public static void main(String[] args) {
-		
+		/**
+		 * creates a new environment and calls the process method.
+		 */
 		MapAndListEnvironment mapEnvironment = new MapAndListEnvironment();
 		mapEnvironment.process();
-		
 		
 	}
 	/**
@@ -45,12 +47,12 @@ public class MapAndListEnvironment {
 	public void process() {
 		
 		/**
-		 * Calls the method to make a key list.
+		 * Calls the set method to make a set key list.
 		 */
 		List<String> stateKey = setStateKey();
 		
 		/**
-		 * Calls the method to make a state name list.  
+		 * Calls the method to make a set state name list.  
 		 */
 		
 		List<String> stateName = setStateName();
@@ -82,9 +84,92 @@ public class MapAndListEnvironment {
 			    
 			}
 		 
+		 /**
+		  * Prints the two maps
+		  */
+		 
 		 printMap(stateMap);
 		 printMap(stateMapInverted);
-	
+
+		 
+		/**
+		* generates a new list of card objects prints them and then shuffles
+		* the deck and prints it again.
+		*/
+			
+		List<Card> cardList = setCardList();
+		printList(cardList);
+		shuffleList(cardList);
+		printList(cardList);
+		
+	}
+
+	/**
+	 * Sets the values of the list of cards.
+	 * @return
+	 */
+	private List<Card> setCardList() {
+		
+		
+		List<Card> StandardDeck = new ArrayList<>(52); 
+		
+		StandardDeck.add(new Card(1 , 'D'));
+		StandardDeck.add(new Card(2 , 'D'));
+		StandardDeck.add(new Card(3 , 'D'));
+		StandardDeck.add(new Card(4 , 'D'));
+		StandardDeck.add(new Card(5 , 'D'));
+		StandardDeck.add(new Card(6 , 'D'));
+		StandardDeck.add(new Card(7 , 'D'));
+		StandardDeck.add(new Card(8 , 'D'));
+		StandardDeck.add(new Card(9 , 'D'));
+		StandardDeck.add(new Card(10 , 'D'));
+		StandardDeck.add(new Card(11 , 'D'));
+		StandardDeck.add(new Card(12 , 'D'));
+		StandardDeck.add(new Card(13 , 'D'));
+		
+		StandardDeck.add(new Card(1 , 'C'));
+		StandardDeck.add(new Card(2 , 'C'));
+		StandardDeck.add(new Card(3 , 'C'));
+		StandardDeck.add(new Card(4 , 'C'));
+		StandardDeck.add(new Card(5 , 'C'));
+		StandardDeck.add(new Card(6 , 'C'));
+		StandardDeck.add(new Card(7 , 'C'));
+		StandardDeck.add(new Card(8 , 'C'));
+		StandardDeck.add(new Card(9 , 'C'));
+		StandardDeck.add(new Card(10 , 'C'));
+		StandardDeck.add(new Card(11 , 'C'));
+		StandardDeck.add(new Card(12 , 'C'));
+		StandardDeck.add(new Card(13 , 'C'));
+		
+		StandardDeck.add(new Card(1 , 'H'));
+		StandardDeck.add(new Card(2 , 'H'));
+		StandardDeck.add(new Card(3 , 'H'));
+		StandardDeck.add(new Card(4 , 'H'));
+		StandardDeck.add(new Card(5 , 'H'));
+		StandardDeck.add(new Card(6 , 'H'));
+		StandardDeck.add(new Card(7 , 'H'));
+		StandardDeck.add(new Card(8 , 'H'));
+		StandardDeck.add(new Card(9 , 'H'));
+		StandardDeck.add(new Card(10 , 'H'));
+		StandardDeck.add(new Card(11 , 'H'));
+		StandardDeck.add(new Card(12 , 'H'));
+		StandardDeck.add(new Card(13 , 'H'));
+		
+		StandardDeck.add(new Card(1 , 'S'));
+		StandardDeck.add(new Card(2 , 'S'));
+		StandardDeck.add(new Card(3 , 'S'));
+		StandardDeck.add(new Card(4 , 'S'));
+		StandardDeck.add(new Card(5 , 'S'));
+		StandardDeck.add(new Card(6 , 'S'));
+		StandardDeck.add(new Card(7 , 'S'));
+		StandardDeck.add(new Card(8 , 'S'));
+		StandardDeck.add(new Card(9 , 'S'));
+		StandardDeck.add(new Card(10 , 'S'));
+		StandardDeck.add(new Card(11 , 'S'));
+		StandardDeck.add(new Card(12 , 'S'));
+		StandardDeck.add(new Card(13 , 'S'));
+		
+		return StandardDeck;
 	}
 
 	/**
@@ -146,9 +231,7 @@ public class MapAndListEnvironment {
 			stateName.add("Washington");
 			stateName.add("Wisconsin");
 			stateName.add("West Verginia");
-
-		 
-		 
+			
 		return stateName;
 	}
 
@@ -217,19 +300,54 @@ public class MapAndListEnvironment {
 	}
 
 	/**
-	  * prints the second maps keys and values to the display.
+	  * prints the size, keys and values of a state map to the display.
 	  */
 	private void printMap(Map<String, String> stateMap) {
-		 System.out.println("List Size " + stateMap.size());
+		System.out.println();
+		
+		System.out.println("List Size " + stateMap.size());
 		 
-		 System.out.println("printing to display the selected tree map of "
+		System.out.println("printing to display the selected tree map of "
 		 		+ "states and states codes" ); 
 
-		 System.out.println(stateMap.keySet());
+		System.out.println(stateMap.keySet());
 		 
-		 System.out.println(stateMap.values());
+		System.out.println(stateMap.values());
 		
+		System.out.println();
+	}
+	
+	/**
+	 *prints to the display the cards in current card list. 
+	 * @param cardList
+	 */
+	public void printList(List<Card> cardList) {
+		
+		System.out.println();
+		
+		System.out.println("List of shuffled cards size " + cardList.size());
+		
+		System.out.println();
+		 
+		 for ( int count = 0 ; count < cardList.size(); count++ ) {
+
+			System.out.println("the shuffled card is " + 
+					cardList.get(count).getCardSuit() + 
+					 " and " + cardList.get(count).getCardRank());
+		 }
+		 
+		System.out.println();
+	}
+	
+	
+	
+	/**
+	 * shuffles active card list.
+	 * @param shuffleList
+	 */
+	public List<Card> shuffleList(List<Card> shuffleList){
+		Collections.shuffle(shuffleList);
+		return shuffleList;
 	}
 
-	
 }
