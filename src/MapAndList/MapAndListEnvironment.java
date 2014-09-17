@@ -325,7 +325,7 @@ public class MapAndListEnvironment {
 		
 		System.out.println();
 		
-		System.out.println("List of shuffled cards size " + cardList.size());
+		System.out.println("List of cards size : " + cardList.size());
 		
 		System.out.println();
 		 
