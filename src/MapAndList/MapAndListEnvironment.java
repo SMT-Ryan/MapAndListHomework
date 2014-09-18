@@ -42,6 +42,9 @@ public class MapAndListEnvironment {
 	 * Produces a list of states abbreviations and state names, which are
 	 * 		organized into a two treemaps.  one in natural order and one in 
 	 * 		reverse natural order. 
+	 * 
+	 * This function also produces a list of cards displays them, shuffles the 
+	 * 		list and displays it again.
 	 */
 	
 	public void process() {
