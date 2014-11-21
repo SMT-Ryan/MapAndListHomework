@@ -78,8 +78,8 @@ public class MapAndListEnvironment {
 		 /**
 		  * produce a second map of the same lists using the new comparator.
 		  */
-		 Map<String , String> stateMapInverted = new TreeMap<String 
-				 , String >(testComparator);
+		 Map<String , String> stateMapInverted = 
+				 new TreeMap<String, String >(testComparator);
 		 
 		 for ( int count = 0 ; count < stateKey.size(); count++ ) {
 
